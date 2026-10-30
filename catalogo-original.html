@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>VIORA · Revista catálogo</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+:root{--desk:#cfccc6;--paper:#f6f4f1;--ink:#14152f;--mute:#5d5f78;--line:#d8d4cd;
+--tone:#e2bd6b;--tone2:#a9802f;--c1:#04051a;--c2:#3a3fd6;--cink:#fff;--acc:#3a3fd6;
+--display:'Bebas Neue','Arial Narrow',Impact,sans-serif;--body:'Poppins','Segoe UI',Arial,sans-serif;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--desk:#05061a;--paper:#12142e;--ink:#f1efec;--mute:#a9abc8;--line:#2a2e66}}
+:root[data-theme="dark"]{--desk:#05061a;--paper:#12142e;--ink:#f1efec;--mute:#a9abc8;--line:#2a2e66}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--desk);color:var(--ink);font-family:var(--body);font-weight:300;line-height:1.65;padding:24px 14px 120px}
+h1,h2,h3{font-family:var(--display);font-weight:400;margin:0;line-height:.95}
+.mag{max-width:980px;margin:0 auto;display:flex;flex-direction:column;gap:28px}
+.page{background:var(--paper);box-shadow:0 18px 40px rgba(0,0,0,.22);border-radius:6px;position:relative;overflow:hidden;padding:56px 54px 64px}
+.folio{position:absolute;left:54px;right:54px;top:22px;display:flex;justify-content:space-between;font-size:11px;color:var(--mute);letter-spacing:.08em}
+.folio.b{top:auto;bottom:20px}
+.cover{background:linear-gradient(100deg,var(--c1),var(--c2));color:var(--cink);min-height:760px;padding:0}
+.cover .top{position:absolute;right:40px;top:34px;text-align:right;font-size:13px;max-width:220px}
+.cover h1{position:absolute;left:36px;top:60px;font-size:clamp(150px,30vw,290px);letter-spacing:.01em;line-height:.8}
+.cover svg.big{position:absolute;left:50%;top:230px;width:min(560px,92%);transform:translateX(-50%) rotate(-8deg)}
+.cover .tag{position:absolute;left:40px;top:330px;font-style:italic;font-size:22px;max-width:190px}
+.cover .bl{position:absolute;left:40px;bottom:40px}.cover .bl h2{font-size:clamp(40px,6vw,58px)}
+.cover .br{position:absolute;right:40px;bottom:40px;text-align:right;max-width:250px}.cover .br h3{font-size:30px;margin-bottom:4px}
+.cover i{font-weight:300;opacity:.85}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:46px;align-items:start}
+.kick{font-size:12px;color:var(--acc);font-weight:500;margin:0 0 10px}
+h2.t{font-size:clamp(46px,7vw,84px);margin-bottom:20px}
+.drop::first-letter{font-family:var(--display);font-size:78px;float:left;line-height:.8;padding:6px 10px 0 0;color:var(--acc)}
+.quote{border-left:4px solid var(--acc);padding:4px 0 4px 20px;font-family:var(--display);font-size:clamp(30px,4.5vw,46px);line-height:1.05;margin:8px 0}
+.fins{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:26px}
+.fin{background:none;border:1px solid var(--line);border-radius:14px;padding:14px 8px 12px;cursor:pointer;color:var(--ink);font:inherit;text-align:center}
+.fin svg{width:100%;height:auto}.fin span{display:block;font-family:var(--display);font-size:22px;letter-spacing:.04em}
+.fin[aria-pressed="true"]{border:2px solid var(--acc)}
+.fin:focus-visible,.sw:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+.plate{background:linear-gradient(115deg,var(--tone),var(--tone2) 60%,var(--tone));border-radius:12px;padding:34px 20px;text-align:center;font-size:clamp(22px,4vw,34px);letter-spacing:.3em;color:rgba(0,0,0,.6);font-weight:500;box-shadow:inset 0 0 0 6px rgba(255,255,255,.22)}
+.card{border:1px solid var(--line);border-radius:14px;padding:22px}
+.card.dk{background:linear-gradient(160deg,var(--c1),var(--c2));color:var(--cink);border-color:transparent}
+.price{font-family:var(--display);font-size:54px;line-height:1}.price small{font-family:var(--body);font-size:12px}
+ul{padding-left:18px;margin:10px 0 0;font-size:15px}li{margin:4px 0}
+.specs{display:grid;grid-template-columns:1fr 1fr;gap:0 40px}
+.specs div{display:flex;justify-content:space-between;gap:14px;padding:11px 0;border-bottom:1px solid var(--line);font-size:14px}
+.specs div span:first-child{color:var(--mute)}.specs div span:last-child{text-align:right}
+.feat{display:grid;grid-template-columns:1fr 1fr;gap:26px 40px;margin-top:20px}.feat h3{font-size:28px;color:var(--acc);margin-bottom:4px}.feat p{margin:0;font-size:15px}
+.note{font-size:12px;color:var(--mute)}
+.back{background:linear-gradient(100deg,var(--c1),var(--c2));color:var(--cink);text-align:center;padding:90px 30px;min-height:420px;display:flex;flex-direction:column;justify-content:center;align-items:center}
+.back h2{font-size:clamp(80px,16vw,160px);letter-spacing:.06em}
+.panel{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(14px + env(safe-area-inset-bottom,0px));background:var(--paper);color:var(--ink);border:1px solid var(--line);border-radius:18px;box-shadow:0 10px 30px rgba(0,0,0,.3);padding:10px 16px;display:flex;gap:16px;align-items:center;flex-wrap:wrap;justify-content:center;width:calc(100% - 28px);max-width:760px;z-index:20}
+.panel label{font-size:11px;color:var(--mute);display:block;margin-bottom:3px}
+.row{display:flex;gap:7px;align-items:center}
+.sw{width:26px;height:26px;border-radius:50%;border:2px solid var(--line);cursor:pointer;padding:0}
+.sw[aria-pressed="true"]{outline:3px solid var(--acc);outline-offset:1px}
+.panel input{width:130px;padding:7px 10px;border:1px solid var(--line);border-radius:10px;background:var(--paper);color:var(--ink);font:inherit;font-size:13px}
+@media(max-width:760px){.page{padding:48px 24px 54px}.folio{left:24px;right:24px}.two,.specs,.feat{grid-template-columns:1fr}.fins{grid-template-columns:repeat(2,1fr)}.cover{min-height:820px}.cover svg.big{top:300px}.cover .tag{top:300px;font-size:18px;max-width:150px}.cover .br{bottom:110px;left:40px;right:auto;text-align:left}.cover .bl{bottom:40px}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--tone)"/><stop offset=".5" stop-color="var(--tone2)"/><stop offset="1" stop-color="var(--tone)"/></linearGradient>
+<pattern id="m" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="6" height="6" fill="url(#g)"/><rect width="1.4" height="6" fill="#000" opacity=".2"/></pattern>
+</defs></svg>
+
+<main class="mag">
+
+<article class="page cover" id="portada">
+<div class="top">Catálogo digital<br>Tecnología, seguridad y estilo</div>
+<h1>VIORA</h1>
+<div class="tag">Protección que llevas contigo</div>
+<div id="coverBr"></div>
+<div class="bl"><h2>Pulsera inteligente S.O.S.</h2><i>Edición personalizable</i></div>
+<div class="br"><h3>Seguridad inteligente</h3><i>Tranquilidad para ti y quienes te importan</i></div>
+</article>
+
+<article class="page" id="editorial">
+<div class="folio"><span>VIORA | CATÁLOGO</span><span>EDITORIAL</span></div>
+<div class="two">
+<div>
+<p class="kick">Carta de la marca</p>
+<h2 class="t">Una joya que cuida de ti</h2>
+<p class="drop">VIORA es una pulsera de seguridad personal pensada para quienes se desplazan a diario y quieren darles tranquilidad a sus familias. Un botón S.O.S. escondido en el diseño envía una alerta inmediata a tus contactos de confianza, y la localización en tiempo real les permite saber dónde estás.</p>
+<p>La app vinculada muestra tu ubicación y reenvía las alertas. Si alguien no la tiene instalada, el aviso le llega por SMS o WhatsApp. No hay suscripción.</p>
+</div>
+<div>
+<div class="quote">“Un dispositivo de seguridad no debe parecer una alarma. Debe parecer tuyo.”</div>
+<p class="note">Según nuestro estudio de mercado, el 60.6% describe el diseño como discreto y el 72.7% ve más útil la pulsera en trayectos nocturnos.</p>
+<p>VIORA = Vida + Orientación + Asistencia. Un nombre corto, fácil de decir, para un accesorio que acompaña más de lo que alerta.</p>
+</div>
+</div>
+<div class="folio b"><span>Protección que llevas contigo</span><span>02</span></div>
+</article>
+
+<article class="page" id="acabados">
+<div class="folio"><span>VIORA | CATÁLOGO</span><span>ACABADOS</span></div>
+<p class="kick">Colección</p>
+<h2 class="t">Cuatro acabados, un mismo acero</h2>
+<p style="max-width:560px">Acero inoxidable 316L con correa de malla milanesa, resistente a la corrosión y flexible sobre la muñeca. Toca un acabado para verlo en toda la revista.</p>
+<div class="fins" id="fins"></div>
+<div class="folio b"><span>Acero inoxidable 316L</span><span>03</span></div>
+</article>
+
+<article class="page" id="personaliza">
+<div class="folio"><span>VIORA | CATÁLOGO</span><span>PERSONALIZACIÓN PREMIUM</span></div>
+<div class="two">
+<div>
+<p class="kick">Edición Premium</p>
+<h2 class="t">Grábale tu nombre</h2>
+<p>La placa central admite un grabado propio. Escribe en el panel inferior y mira el resultado aquí mismo.</p>
+<div class="plate" id="plate">VIORA</div>
+<p class="note" style="margin-top:12px">Grabado de hasta 12 caracteres. Vista ilustrativa.</p>
+</div>
+<div style="display:grid;gap:16px">
+<div class="card"><h3 style="font-size:32px">Esencial</h3><div class="price">$29.99 <small>USD</small></div>
+<ul><li>Localización en tiempo real y S.O.S.</li><li>Dos acabados de lanzamiento</li><li>App gratuita, sin suscripción</li></ul></div>
+<div class="card dk"><h3 style="font-size:32px">Premium</h3><div class="price">Desde $39.99 <small>USD · propuesto</small></div>
+<ul><li>Grabado personalizado</li><li>Los cuatro acabados</li><li>Correa flexible o deportiva</li><li>Estuche de regalo y facilidades de pago</li></ul></div>
+</div>
+</div>
+<p class="note" style="margin-top:20px">Precio Premium por validar. El estudio respalda $25 a $35 para la edición base.</p>
+<div class="folio b"><span>Hecha para ser tuya</span><span>04</span></div>
+</article>
+
+<article class="page" id="tecnologia">
+<div class="folio"><span>VIORA | CATÁLOGO</span><span>TECNOLOGÍA</span></div>
+<p class="kick">Por dentro</p>
+<h2 class="t">Hardware invisible</h2>
+<div class="feat">
+<div><h3>Ubicación en tiempo real</h3><p>GPS, LBS y Bluetooth 5.0, sin el límite de tiempo de compartir ubicación por mensajería.</p></div>
+<div><h3>Botón S.O.S.</h3><p>Discreto, en un lateral. Alerta con ubicación a tus contactos de confianza.</p></div>
+<div><h3>Búsqueda cercana</h3><p>Si la red móvil cae, la tecnología UWB guía a los equipos de rescate con margen de pocos centímetros.</p></div>
+<div><h3>Batería honesta</h3><p>De 3 a 4 días en uso estándar y hasta 7 en ahorro de energía. Carga magnética en 1 a 1.5 horas.</p></div>
+<div><h3>Resistencia IP67</h3><p>Protegida del agua, el polvo y el sudor, con cristal reforzado contra rayones.</p></div>
+<div><h3>Próximamente</h3><p>Audio de emergencia, detección de caídas y zonas seguras. Signos vitales en una versión posterior.</p></div>
+</div>
+<div class="folio b"><span>Seguridad inteligente</span><span>05</span></div>
+</article>
+
+<article class="page" id="ficha">
+<div class="folio"><span>VIORA | CATÁLOGO</span><span>FICHA TÉCNICA</span></div>
+<p class="kick">Detalles</p>
+<h2 class="t">Ficha técnica</h2>
+<div class="specs">
+<div><span>Material</span><span>Acero 316L, malla milanesa</span></div>
+<div><span>Localización</span><span>GPS + LBS + Bluetooth 5.0</span></div>
+<div><span>Acabados</span><span>Dorado, plateado, rose gold, azul</span></div>
+<div><span>Resistencia</span><span>IP67</span></div>
+<div><span>Grosor del módulo</span><span>4.8 mm</span></div>
+<div><span>Batería</span><span>90 mAh, carga magnética</span></div>
+<div><span>Longitud</span><span>Ajustable, 150 a 210 mm</span></div>
+<div><span>Compatibilidad</span><span>iOS y Android</span></div>
+<div><span>Peso</span><span>23 a 25 g</span></div>
+<div><span>En la caja</span><span>Pulsera, cable, manual, QR</span></div>
+</div>
+<div class="folio b"><span>Universidad Evangélica de El Salvador</span><span>06</span></div>
+</article>
+
+<article class="page back">
+<h2>VIORA</h2>
+<p>Tranquilidad para ti y quienes te importan.</p>
+<p class="note" style="color:inherit;opacity:.75">Desarrollo de Productos y Nuevas Tendencias de Mercado</p>
+</article>
+</main>
+
+<div class="panel" role="group" aria-label="Personalizar la revista">
+<div><label>Acabado de la pulsera</label><div class="row" id="fsw"></div></div>
+<div><label>Color de la revista</label><div class="row" id="tsw"></div></div>
+<div><label for="in">Grabado</label><input id="in" maxlength="12" value="VIORA"></div>
+</div>
+
+<script>
+var F=[{n:'Dorado',a:'#e2bd6b',b:'#a9802f'},{n:'Plateado',a:'#d9dce2',b:'#8a8f9b'},{n:'Rose gold',a:'#e8b4a0',b:'#b0705c'},{n:'Azul metálico',a:'#5a7fd6',b:'#243f8f'}];
+var T=[{n:'Medianoche',c1:'#04051a',c2:'#3a3fd6',i:'#fff',acc:'#3a3fd6'},{n:'Esmeralda',c1:'#03160f',c2:'#1d8a6a',i:'#fff',acc:'#1b7d5f'},{n:'Vino',c1:'#1c0510',c2:'#a3294f',i:'#fff',acc:'#a3294f'},{n:'Perla',c1:'#f1efeb',c2:'#b9b6b0',i:'#14152f',acc:'#6b5a3a'}];
+var R=document.documentElement,txt='VIORA';
+function br(){return '<svg viewBox="0 0 400 260" aria-hidden="true" style="width:100%;height:auto;display:block"><ellipse cx="200" cy="140" rx="150" ry="96" fill="none" stroke="url(#m)" stroke-width="30"/><rect x="118" y="26" width="164" height="46" rx="8" fill="url(#g)" stroke="#000" stroke-opacity=".15"/><rect x="124" y="32" width="152" height="34" rx="5" fill="none" stroke="#fff" stroke-opacity=".35"/><text class="et" x="200" y="55" text-anchor="middle" font-family="Poppins,Arial,sans-serif" font-size="15" letter-spacing="3" fill="#000" fill-opacity=".6">VIORA</text><rect x="282" y="42" width="6" height="14" rx="3" fill="var(--tone2)"/></svg>'}
+var cb=document.getElementById('coverBr');cb.innerHTML=br();var s=cb.firstChild;s.setAttribute('class','big');s.removeAttribute('style');
+var fins=document.getElementById('fins'),fsw=document.getElementById('fsw'),tsw=document.getElementById('tsw');
+F.forEach(function(f,i){
+var b=document.createElement('button');b.className='fin';b.innerHTML='<svg viewBox="0 0 400 260" aria-hidden="true"><ellipse cx="200" cy="140" rx="150" ry="96" fill="none" stroke="'+f.b+'" stroke-width="30"/><ellipse cx="200" cy="140" rx="150" ry="96" fill="none" stroke="'+f.a+'" stroke-width="18" stroke-dasharray="3 3"/><rect x="118" y="26" width="164" height="46" rx="8" fill="'+f.a+'"/></svg><span>'+f.n+'</span>';
+b.onclick=function(){pick(i)};fins.appendChild(b);
+var w=document.createElement('button');w.className='sw';w.style.background='linear-gradient(135deg,'+f.a+','+f.b+')';w.setAttribute('aria-label',f.n);w.onclick=function(){pick(i)};fsw.appendChild(w)});
+T.forEach(function(t,i){var w=document.createElement('button');w.className='sw';w.style.background='linear-gradient(135deg,'+t.c1+','+t.c2+')';w.setAttribute('aria-label',t.n);w.onclick=function(){theme(i)};tsw.appendChild(w)});
+function pick(i){R.style.setProperty('--tone',F[i].a);R.style.setProperty('--tone2',F[i].b);
+[].forEach.call(fsw.children,function(c,j){c.setAttribute('aria-pressed',j===i)});[].forEach.call(fins.children,function(c,j){c.setAttribute('aria-pressed',j===i)})}
+function theme(i){var t=T[i];R.style.setProperty('--c1',t.c1);R.style.setProperty('--c2',t.c2);R.style.setProperty('--cink',t.i);R.style.setProperty('--acc',t.acc);
+[].forEach.call(tsw.children,function(c,j){c.setAttribute('aria-pressed',j===i)})}
+document.getElementById('in').addEventListener('input',function(e){txt=(e.target.value||'VIORA').toUpperCase();document.getElementById('plate').textContent=txt;[].forEach.call(document.querySelectorAll('.et'),function(n){n.textContent=txt})});
+pick(0);theme(0);
+</script>
+</body>
+</html>

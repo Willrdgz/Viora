@@ -1,0 +1,12 @@
+# Archivos locales y paquetes de entrega
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+.env
+.env.*
+*.log
+*.zip
+*.tar.gz
+__pycache__/
+node_modules/
